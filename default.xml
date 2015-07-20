@@ -12,18 +12,14 @@
 
 <manifest>
 
-<!-- We assume this manifest is in the same path as all the libraries. If you are
-     copying this manifest as a template then you probably want the fetch path
-     for this to be '../seL4' instead of '.' -->
-<remote name="seL4"
-fetch="."
-/>
-
-<default revision="master"
-remote="seL4"
-/>
+<default revision="master"/>
 
 <project name="seL4.git" path="kernel"/>
+<project name="sel4-build.git" path=".build">
+    <linkfile src=Makefile" dest=Makefile">
+    <linkfile src=Kbuild" dest=Kbuild">
+    <linkfile src=Kconfig" dest=Kconfig">
+</project>
 <project name="libsel4assert.git" path="libs/libsel4assert"/>
 <project name="libsel4benchmark.git" path="libs/libsel4benchmark"/>
 <project name="libsel4printf.git" path="libs/libsel4printf"/>
@@ -31,29 +27,8 @@ remote="seL4"
 <project name="libsel4startstop.git" path="libs/libsel4startstop"/>
 <project name="common-tool.git" path="tools/common"/>
 <project name="kbuild-tool.git" path="tools/kbuild"/>
-<project name="elfloader-tool.git" path="tools/elfloader"/>
-<project name="musllibc.git" path="libs/libmuslc" revision="sel4"/>
-<project name="libsel4muslcsys.git" path="libs/libsel4muslcsys"/>
-<project name="libsel4platsupport.git" path="libs/libsel4platsupport"/>
-<project name="libsel4test.git" path="libs/libsel4test"/>
-<project name="libsel4allocman.git" path="libs/libsel4allocman"/>
-<project name="libsel4vka.git" path="libs/libsel4vka"/>
-<project name="libsel4vspace.git" path="libs/libsel4vspace"/>
-<project name="libsel4utils.git" path="libs/libsel4utils"/>
-<project name="libcpio.git" path="libs/libcpio"/>
-<project name="libelf.git" path="libs/libelf"/>
-<project name="libsel4simple.git" path="libs/libsel4simple"/>
-<project name="libsel4simple-default.git" path="libs/libsel4simple-default"/>
-<project name="libsel4simple-stable.git" path="libs/libsel4simple-stable"/>
-<project name="libplatsupport.git" path="libs/libplatsupport"/>
-<project name="libutils.git" path="libs/libutils"/>
-<project name="sel4test.git" path="projects/sel4test">
-    <linkfile src="Makefile" dest="Makefile"/>
-    <linkfile src="Kbuild" dest="Kbuild"/>
-    <linkfile src="Kconfig" dest="Kconfig"/>
-    <linkfile src="master-configs" dest="configs"/>
-    <linkfile src="apps" dest="apps"/>
-    <linkfile src="../../kernel/libsel4" dest="libs/libsel4"/>
+<project name="sel4-app-helloworld.git" path="apps/helloworld">
+    <linkfile src="configs" dest="configs"/>
 </project>
 
 </manifest>
