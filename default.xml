@@ -12,23 +12,23 @@
 
 <manifest>
 
-<default revision="master"/>
+    <default revision="master"/>
 
-<project name="seL4.git" path="kernel"/>
-<project name="sel4-build.git" path=".build">
-    <linkfile src="Makefile" dest="Makefile"/>
-    <linkfile src="Kbuild" dest="Kbuild"/>
-    <linkfile src="Kconfig" dest="Kconfig"/>
-</project>
-<project name="libsel4assert.git" path="libs/libsel4assert"/>
-<project name="libsel4benchmark.git" path="libs/libsel4benchmark"/>
-<project name="libsel4printf.git" path="libs/libsel4printf"/>
-<project name="libsel4putchar.git" path="libs/libsel4putchar"/>
-<project name="libsel4startstop.git" path="libs/libsel4startstop"/>
-<project name="common-tool.git" path="tools/common"/>
-<project name="kbuild-tool.git" path="tools/kbuild"/>
-<project name="sel4-app-helloworld.git" path="apps/helloworld">
-    <linkfile src="configs" dest="configs"/>
-</project>
+    <project name="seL4.git" path="kernel"/>
+    <project name="sel4-build.git" path=".build">
+	<linkfile src="Makefile" dest="Makefile"/>
+	<linkfile src="Kbuild" dest="Kbuild"/>
+	<linkfile src="Kconfig" dest="Kconfig"/>
+    </project>
+    <project name="libsel4assert.git" path="libs/libsel4assert"/>
+    <project name="libsel4benchmark.git" path="libs/libsel4benchmark"/>
+    <project name="libsel4printf.git" path="libs/libsel4printf"/>
+    <project name="libsel4putchar.git" path="libs/libsel4putchar"/>
+    <project name="libsel4startstop.git" path="lkAibs/libsel4startstop"/>
+    <project name="common-tool.git" path="tools/common"/>
+    <project name="kbuild-tool.git" path="tools/kbuild"/>
+    <project name="sel4-app-helloworld.git" path="apps/helloworld">
+	<linkfile src="configs" dest="configs"/>
+    </project>
 
 </manifest>
