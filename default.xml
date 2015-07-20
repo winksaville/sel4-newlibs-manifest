@@ -16,7 +16,9 @@
 
     <default revision="master" remote="winksaville"/>
 
-    <project name="seL4.git" path="kernel"/>
+    <project name="seL4.git" path="kernel" revision="libsel4-no-libc-dependency">
+	<linkfile src="libsel4" dest="libs/libsel4"/>
+    </project>
     <project name="sel4-build.git" path=".build">
 	<linkfile src="Makefile" dest="Makefile"/>
 	<linkfile src="Kbuild" dest="Kbuild"/>
