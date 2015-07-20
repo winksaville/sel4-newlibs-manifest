@@ -14,7 +14,7 @@
 
     <remote name="winksaville" fetch="."/>
 
-    <default revision="master"/>
+    <default revision="master" remote="winksaville"/>
 
     <project name="seL4.git" path="kernel"/>
     <project name="sel4-build.git" path=".build">
