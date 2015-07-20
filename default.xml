@@ -16,9 +16,9 @@
 
 <project name="seL4.git" path="kernel"/>
 <project name="sel4-build.git" path=".build">
-    <linkfile src=Makefile" dest=Makefile"/>
-    <linkfile src=Kbuild" dest=Kbuild"/>
-    <linkfile src=Kconfig" dest=Kconfig"/>
+    <linkfile src="Makefile" dest="Makefile"/>
+    <linkfile src="Kbuild" dest="Kbuild"/>
+    <linkfile src="Kconfig" dest="Kconfig"/>
 </project>
 <project name="libsel4assert.git" path="libs/libsel4assert"/>
 <project name="libsel4benchmark.git" path="libs/libsel4benchmark"/>
