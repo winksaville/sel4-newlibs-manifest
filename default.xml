@@ -28,6 +28,7 @@
     <project name="libsel4benchmark.git" path="libs/libsel4benchmark"/>
     <project name="libsel4printf.git" path="libs/libsel4printf"/>
     <project name="libsel4putchar.git" path="libs/libsel4putchar"/>
+    <project name="libsel4string.git" path="libs/libsel4string"/>
     <project name="libsel4startstop.git" path="libs/libsel4startstop"/>
     <project name="common-tool.git" path="tools/common"/>
     <project name="kbuild-tool.git" path="tools/kbuild"/>
