@@ -12,6 +12,8 @@
 
 <manifest>
 
+    <remote name="winksaville" fetch="."/>
+
     <default revision="master"/>
 
     <project name="seL4.git" path="kernel"/>
