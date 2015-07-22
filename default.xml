@@ -23,6 +23,9 @@
 	<linkfile src="Makefile" dest="Makefile"/>
 	<linkfile src="Kbuild" dest="Kbuild"/>
 	<linkfile src="Kconfig" dest="Kconfig"/>
+	<linkfile src="CMakeLists.txt" dest="CMakeLists.txt"/>
+	<linkfile src="apps/CMakeLists.txt" dest="apps/CMakeLists.txt"/>
+	<linkfile src="libs/CMakeLists.txt" dest="libs/CMakeLists.txt"/>
     </project>
     <project name="libsel4assert.git" path="libs/libsel4assert"/>
     <project name="libsel4benchmark.git" path="libs/libsel4benchmark"/>
