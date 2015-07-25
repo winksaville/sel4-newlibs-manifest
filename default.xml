@@ -26,6 +26,8 @@
 	<linkfile src="CMakeLists.txt" dest="CMakeLists.txt"/>
 	<linkfile src="apps/CMakeLists.txt" dest="apps/CMakeLists.txt"/>
 	<linkfile src="libs/CMakeLists.txt" dest="libs/CMakeLists.txt"/>
+	<!-- Assume seL4.git has been dowloaded and libs/libsel4 link has been created -->
+	<linkfile src="libs/libsel4/CMakeLists.txt" dest="libs/libsel4/CMakeLists.txt"/>
     </project>
     <project name="libsel4assert.git" path="libs/libsel4assert"/>
     <project name="libsel4benchmark.git" path="libs/libsel4benchmark"/>
