@@ -19,6 +19,8 @@
     <project name="seL4.git" path="kernel" revision="libsel4-no-libc-dependency">
 	<linkfile src="libsel4" dest="libs/libsel4"/>
     </project>
+    <project name="common-tool.git" path="tools/common"/>
+    <project name="kbuild-tool.git" path="tools/kbuild"/>
     <project name="sel4-build.git" path=".build">
 	<linkfile src="Makefile" dest="Makefile"/>
 	<linkfile src="Kbuild" dest="Kbuild"/>
@@ -28,6 +30,8 @@
 	<linkfile src="libs/CMakeLists.txt" dest="libs/CMakeLists.txt"/>
 	<!-- Assume seL4.git has been dowloaded -->
 	<linkfile src="libs/libsel4/CMakeLists.txt" dest="kernel/libsel4/CMakeLists.txt"/>
+	<!-- Assume kbuild-tool.git has been dowloaded -->
+	<linkfile src="tools/kbuild/kconfig/CMakeLists.txt" dest="tools/kbuild/kconfig/CMakeLists.txt"/>
     </project>
     <project name="libsel4assert.git" path="libs/libsel4assert"/>
     <project name="libsel4benchmark.git" path="libs/libsel4benchmark"/>
@@ -35,8 +39,6 @@
     <project name="libsel4putchar.git" path="libs/libsel4putchar"/>
     <project name="libsel4string.git" path="libs/libsel4string"/>
     <project name="libsel4startstop.git" path="libs/libsel4startstop"/>
-    <project name="common-tool.git" path="tools/common"/>
-    <project name="kbuild-tool.git" path="tools/kbuild"/>
     <project name="sel4-app-helloworld.git" path="apps/helloworld">
 	<linkfile src="configs" dest="configs"/>
     </project>
