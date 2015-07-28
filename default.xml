@@ -42,5 +42,20 @@
     <project name="sel4-app-helloworld.git" path="apps/helloworld">
 	<linkfile src="configs/*" dest="configs"/>
     </project>
+    <project name="sel4-app-min-app.git" path="apps/min-app">
+	<linkfile src="configs/*" dest="configs"/>
+    </project>
+    <project name="sel4-app-myassert.git" path="apps/myassert">
+	<linkfile src="configs/*" dest="configs"/>
+    </project>
+    <project name="sel4-app-bootinfo.git" path="apps/bootinfo">
+	<linkfile src="configs/*" dest="configs"/>
+    </project>
+    <project name="sel4-app-assert.git" path="apps/assert">
+	<linkfile src="configs/*" dest="configs"/>
+    </project>
+    <project name="sel4-app-test-nolibc.git" path="apps/test-nolibc">
+	<linkfile src="configs/*" dest="configs"/>
+    </project>
 
 </manifest>
