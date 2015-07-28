@@ -40,7 +40,7 @@
     <project name="libsel4string.git" path="libs/libsel4string"/>
     <project name="libsel4startstop.git" path="libs/libsel4startstop"/>
     <project name="sel4-app-helloworld.git" path="apps/helloworld">
-	<linkfile src="configs" dest="configs"/>
+	<linkfile src="configs/*" dest="configs"/>
     </project>
 
 </manifest>
