@@ -1,5 +1,7 @@
 sel4-newlibs-manifest
 =====================
+
+[![Join the chat at https://gitter.im/winksaville/sel4-newlibs-manifest](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/winksaville/sel4-newlibs-manifest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 The seL4 project with no libc dependicies. This is a very very
 subset of seL4 as of today it only able to create applications
 on the order of the complexity and functionality of "helloworld",
