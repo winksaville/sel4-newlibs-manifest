@@ -32,7 +32,7 @@ and tested two CMake generators. One for "Unix Makefiles" and the other
 for "Ninja". To build for "Unix Makefiles" do the following:
 ```
 mkdir cmake-build
-cd make-build
+cd cmake-build
 cmake ..
 make
 ```
