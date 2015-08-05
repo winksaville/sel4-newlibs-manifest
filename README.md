@@ -3,7 +3,24 @@ sel4-newlibs-manifest
 The seL4 project with no libc dependicies. This is a very very
 subset of seL4 as of today it only able to create applications
 on the order of the complexity and functionality of "helloworld",
-so do expect to much.
+so do not expect to much.
+
+Dependencies
+------------
+
+My development system is Ubuntu 15.04 and here are the
+primary dependencies and their versions that I'm using:
+
+* gnu make v3.81
+* gcc 4.9.2
+* [git](https://github.com/git/git) v2.5.0
+* [CMake](http://www.cmake.org/download/) v3.2.3
+* [ninja](https://github.com/martine/ninja) v1.6.0
+* [repo](https://code.google.com/p/git-repo/) v1.12.26
+
+
+Checkout build and run
+----------------------
 
 To checkout create a directory and use repo, repo sync (the repo
 selfupdate is required as I'm using features that aren't available
@@ -25,6 +42,8 @@ make
 make run app=helloworld
 ```
 
+Other build options
+-------------------
 
 As I'm exploring build systems there are actually several options for
 building. The "original" make system as we did above plus I've added
