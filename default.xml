@@ -28,6 +28,10 @@
 	<linkfile src="CMakeLists.txt" dest="CMakeLists.txt"/>
 	<linkfile src="apps/CMakeLists.txt" dest="apps/CMakeLists.txt"/>
 	<linkfile src="libs/CMakeLists.txt" dest="libs/CMakeLists.txt"/>
+	<!-- Setup the initial .config to all_x86_defconfig -->
+	<linkfile src="configs/all_x86_defconfig" dest=".config"/>
+	<!-- Copy all of the configs to configs/ -->
+	<linkfile src="configs/*" dest="configs"/>
 	<!-- Assume seL4.git has been dowloaded -->
 	<linkfile src="libs/libsel4/CMakeLists.txt" dest="kernel/libsel4/CMakeLists.txt"/>
 	<!-- Assume kbuild-tool.git has been dowloaded -->

@@ -1,16 +1,35 @@
 sel4-newlibs-manifest
-=================
-The sel4 project with no libc dependicies.
+=====================
+The seL4 project with no libc dependicies. This is a very very
+subset of seL4 as of today it only able to create applications
+on the order of the complexity and functionality of "helloworld",
+so do expect to much.
 
-To checkout the use repo, repo sync and get the default config:
+To checkout create a directory and use repo, repo sync (the repo
+selfupdate is required as I'm using features that aren't available
+unless you have the latest version):
 ```
+mkdir sel4-newlibs
+cd sel4-newlibs
 repo init -u https://github.com/winksaville/sel4-newlibs-manifest.git
+repo selfupdate
 repo sync
-make helloworld_x86_defconfig
 ```
 
-To build using CMake create a subdirectory and run "cmake .."
-which creates the Makefile and then run "make"
+By default this manifest setups a default configuration (.config) in
+the root of the repos which builds all of the apps for x86 and can be
+tested using qemu. So now use make to build and then run helloworld
+under qemu:
+```
+make
+make run app=helloworld
+```
+
+
+As I'm exploring build systems there are actually several options for
+building. The "original" make system as we did above plus I've added
+and tested two CMake generators. One for "Unix Makefiles" and the other
+for "Ninja". To build for "Unix Makefiles" do the following:
 ```
 mkdir cmake-build
 cd make-build
@@ -20,7 +39,7 @@ make
 
 Then to run helloworld using qemu, which works for either cmake or root make:
 ```
-make simulate
+make run_helloworld
 ```
 
 The output should be something like, type 'ctrl-a' then 'x' to exit qemu:
@@ -32,14 +51,19 @@ Wrote to ksLog deadbeef
 Hello, World!
 ```
 
-Currently you can still build using the standard root makefile system.
-Just "cd .." back to the root and and type "make and "make simulate" to run:
+To use "Ninja" its the same as "Unix Makefiles" except you need to specify
+the generator:
 ```
 cd ..
-make
-make simulate
+mkdir ninja-build
+cd ninja-build
+cmake -G Ninja ..
+ninja
+ninja run_helloworld
 ```
 
+Build performance
+-----------------
 I've choosen to use CMake because it allows for faster build times. A clean build with
 ccache cleared and clean takes about 14 seconds on my desktop:
 
@@ -85,7 +109,7 @@ user	0m8.364s
 sys 0m1.864s
 ```
 
-Using CMake takes about 8 seconds:
+Using CMake "Unix Makefiles" takes about 8 seconds:
 ```
 $ ccache -C -c -z -s; make clean; time make
 Cleared cache
@@ -126,8 +150,8 @@ user	0m5.808s
 sys 0m0.576s
 ```
 
-The most significant difference happens if there are no or minor changes, thus
-significantly reducing the test, edit, compile cycle. Here if I change
+The most significant difference happens if there are no or only minor changes, thus
+significantly reducing the test, edit, compile cycle. Here, if I change
 apps/helloworld/src/main.c to print "Hello, Wink!\n" the standard make
 takes almost 7 seconds:
 ```
@@ -157,7 +181,7 @@ user	0m2.768s
 sys 0m1.056s
 ```
 
-But for CMake it takes 0.3 seconds:
+But for CMake "Unix Makefiles" it takes 0.3 seconds:
 ```
 $ time make
 [ 10%] Built target conf
@@ -183,4 +207,15 @@ Scanning dependencies of target helloworld-main
 real	0m0.306s
 user	0m0.056s
 sys 0m0.040s
+```
+
+A world about configurations
+----------------------------
+
+Other configurations can be created using menuconfig or using an editor.
+If the configuration ends with "defconfig" and exists in configs/ it
+will be listed in the "make help" information and you can use it by
+simply doing "make xxxx_defconfig":
+```
+make helloworld_x86_defconfig
 ```
